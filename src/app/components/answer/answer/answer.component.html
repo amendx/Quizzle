@@ -1,0 +1,26 @@
+<div class="card ">
+  <div class="card-header ">
+    <h5 class="card-title" *ngIf="!isEditing">Create new Answer </h5>
+    <h5 class="card-title" *ngIf="isEditing">Edit Answer {{currentAnswer.id}}</h5>
+    <hr/>
+    <div class="card-body ">
+      <form (submit)="saveAnswer(form)" #form>
+        <ul class="wrapper">
+          <li class="form-row">
+            <label for="townborn">Description</label>
+            <textarea cols="5" [(ngModel)]="currentAnswer.description" name="description" rows="3" class="form-control" id="townborn"></textarea>
+          </li>
+
+          <hr/>
+          <li class="form-row">
+            <button type="submit" id="edit-button" *ngIf="isEditing" class="btn btn-success">Update</button>
+            <button type="submit" id="submit-button" *ngIf="!isEditing" class="btn btn-success">Submit</button>
+            <button type="button" id="delete-button" *ngIf="isEditing" (click)="deleteAnswer()" class="btn btn-danger">Delete</button>
+            <button type="button" [routerLink]="['/answers']" id="info-button" class="btn btn-info  ">Answers List</button>
+
+          </li>
+          <!-- <hr/> -->
+        </ul>
+      </form>
+    </div>
+  </div>

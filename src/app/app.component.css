@@ -1,0 +1,17 @@
+
+/*HTML and BODY set to screen size*/
+html, body {
+    min-height: initial;
+    height: auto;
+}
+
+#footer-text{
+    color: #fff;
+   
+}
+
+#footer{
+    position: fixed;
+    bottom:0;
+    width:100%; 
+}
