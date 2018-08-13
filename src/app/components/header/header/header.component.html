@@ -1,0 +1,30 @@
+<!-- NAVIGATION: Navigation is also responsive.  -->
+<!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Quizzle</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li *ngFor="let menuItem of menuItems">
+        <i class="fa fa-lg fa-fw {{menuItem.icon}}"></i>
+        <a [routerLink]="menuItem.routerLink" class="menu-item">{{menuItem.title}}</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<!-- END OF NAVIGATION -->
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Quizzle</a>
+    </div>
+    <ul class="navbar-nav">
+      <li *ngFor="let menuItem of menuItems" class="nav-item">
+        <i class="fa fa-lg fa-fw {{menuItem.icon}}"></i>
+        <a [routerLink]="menuItem.routerLink" class="nav-link">{{menuItem.title}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,62 @@
+<div class="card ">
+  <div class="card-header ">
+    <h5 class="card-title ">Create new Quiz </h5>
+    <hr/>
+  </div>
+  <div class="card-body ">
+    <form (submit)="saveQuiz(form)" #form>
+      <ul class="wrapper">
+        <li class="form-row">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="currentQuiz.name" name="name" class="form-control" id="name">
+        </li>
+        <li class="form-row">
+          <label for="townborn">Description</label>
+          <textarea cols="5" [(ngModel)]="currentQuiz.description" name="description" rows="3" class="form-control" id="townborn"></textarea>
+        </li>
+        <li class="form-row">
+          <label for="email">Questions</label>
+          <select class="selectpicker form-control" [(ngModel)]="currentQuiz.questions" id="questionsSelect" name="questionsSelect"
+            multiple>
+            <option *ngFor="let question of questions" [value]="question.id">{{question.name}}</option>
+          </select>
+        </li>
+
+        <li class="form-row">
+          <button type="submit" id="edit-button" *ngIf="isEditing" class="btn btn-success">Update</button>
+          <button type="submit" id="submit-button" *ngIf="!isEditing" class="btn btn-success">Submit</button>
+          <button type="button" id="delete-button" *ngIf="isEditing" class="btn btn-danger">Delete</button>
+          <button type="button" [routerLink]="['/quizes']" id="info-button" class="btn btn-info">Quiz List</button>
+
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>
+<hr/>
+<div class="card">
+  <div class="card-header ">
+    <h5 class="card-title ">Quiz Available </h5>
+    <hr/>
+  </div>
+  <table class="table table-striped" id="quizAvailable">
+    <thead class="thead-dark">
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Available</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quiz of quizes">
+        <td>{{quiz.name}}</td>
+        <td>
+          {{quiz.description}}
+        </td>
+        <td align="right">
+          <button class="btn btn-default" *ngIf="!quiz.answered" id="btn-available" (click)="getQuizById(quiz.id)">Available</button>
+          <button class="btn btn-default" *ngIf="quiz.answered" id="btn-unavailable">Unavailable</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+</div>

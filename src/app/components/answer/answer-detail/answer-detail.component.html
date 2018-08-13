@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Answers Available</h5>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead class="thead-light">
+        <th scope="col"> #</th>
+        <th scope="col">Description</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let answer of answers">
+          <td>{{answer.id}}</td>
+          <td class="column-2">
+            <a [routerLink]="['/answer/', answer.id]"> {{answer.description}}</a>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

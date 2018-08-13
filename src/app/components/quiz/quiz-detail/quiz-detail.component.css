@@ -1,0 +1,48 @@
+#section-home{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wrapper {
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
+  }
+  .form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+  }
+  .form-row > label, #questionDiv {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+  }
+  .form-row > input, select {
+    flex: 2;
+  }
+  .form-row >textarea {
+    flex: 2;
+    resize: none
+  }
+  .form-row > input,
+  .form-row > button {
+    padding: .5em;
+  }
+
+
+  #answer-button{
+    margin-right: .7em;
+    width: 15em;
+  }
+
+  .card-footer {
+    justify-content: flex-end;
+    display: flex;
+  margin-bottom: 2%;
+  }
+
+  #radio-answer{
+    padding-right: 8px;
+    top: 10px;
+  }

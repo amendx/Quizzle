@@ -1,0 +1,33 @@
+<!-- HEADER COMPONENT -->
+<app-header></app-header>
+<!--END HEADER COMPONENT -->
+
+<!-- ROUTER OUTLET: All components are 'switched' inside this tag -->
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer" class="page-footer  bg-dark ">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <span class="txt-color-white" id="footer-text"> Developed By - Amanda Esmeraldo</span>
+    </div>
+    <!-- <div class="col-xs-6 col-sm-6 text-right hidden-xs">
+
+    </div> -->
+  </div>
+
+</div>
+
+<script>
+  $(window).scroll(function () {
+
+    if ($(this).scrollTop() > 0) {
+      $('#footer').fadeOut();
+    }
+    else {
+      $('#footer').fadeIn();
+    }
+  });
+</script>

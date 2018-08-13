@@ -1,0 +1,46 @@
+<div class="card ">
+  <div class="card-header">
+    <h5 class="card-title" *ngIf="isEditing">Create new Question </h5>
+    <h5 class="card-title" *ngIf="!isEditing">Edit Question {{currentQuestion.id}}</h5>
+    <hr/>
+    <div class="card-body ">
+      <form (submit)="saveQuestion(form)" #form>
+        <ul class="wrapper">
+          <li class="form-row">
+            <label for="name">Name</label>
+            <input type="text" [(ngModel)]="currentQuestion.name" name="name" class="form-control" id="name">
+          </li>
+          <li class="form-row">
+            <label for="townborn">Description</label>
+            <textarea cols="5" [(ngModel)]="currentQuestion.description" name="description" rows="3" class="form-control" id="townborn"></textarea>
+          </li>
+          <li class="form-row">
+            <label for="email">Answers</label>
+            <select class="selectpicker form-control" [(ngModel)]="currentQuestion.answers" id="answersSelect" name="answersSelect" multiple>
+              <option *ngFor="let answer of answers" [value]="answer">{{answer.description}}</option>
+            </select>
+
+          </li>
+          <li class="form-row">
+
+            <label>Correct Answer</label>
+            <select [(ngModel)]="currentQuestion.correctAnswer" class="form-control" name="answerValue" id="answerValue">
+              <option *ngFor="let answer of currentQuestion.answers" [value]="answer.id">{{answer.description}}</option>
+            </select>
+
+
+          </li>
+          <hr/>
+          <li class="form-row">
+
+            <button type="submit" id="update-button" *ngIf="!isEditing" class="btn btn-success">Update</button>
+            <button type="submit" id="submit-button" *ngIf="isEditing" class="btn btn-success">Submit</button>
+            <button type="button" id="delete-button" *ngIf="!isEditing" class="btn btn-danger">Delete</button>
+            <button type="button" [routerLink]="['/questions']" id="info-button" class="btn btn-info  ">Questions List</button>
+
+          </li>
+        </ul>
+      </form>
+      <hr/>
+    </div>
+  </div>

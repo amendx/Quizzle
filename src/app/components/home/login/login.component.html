@@ -1,0 +1,27 @@
+<div class="row custom-row" id="section-home">
+    <div class="col-sm-5 custom-container jumbotron">
+
+        <form class="form-horizontal" #login>
+            <fieldset>
+                <legend>Login</legend>
+                <hr/>
+
+                <ul class="wrapper">
+                    <li class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required [(ngModel)]="currentUser.email" class="form-control" id="email">
+                    </li>
+                    <li class="form-row">
+                        <label for="townborn">Passwrod</label>
+                        <input type="password" name="gender" required class="form-control" [(ngModel)]="currentUser.password" id="townborn">
+                    </li>
+                    <hr/>
+                    <li class="form-row">
+                        <button type="button" (click)="getUserLogin()" id="submitBtn" class="btn btn-primary">Submit</button>
+                    </li>
+                </ul>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

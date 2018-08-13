@@ -1,0 +1,40 @@
+<div class="row custom-row" id="section-home">
+    <div class="col-sm-5 custom-container jumbotron">
+
+        <form class="form-horizontal" (submit)="saveUser(registration)" #registration>
+            <fieldset>
+                <legend>Register</legend>
+                <hr/>
+
+                <ul class="wrapper">
+                    <li class="form-row">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" required [(ngModel)]="currentUser.name" class="form-control" id="name">
+                    </li>
+                    <li class="form-row">
+                        <label for="townborn">Gender</label>
+                        <input type="text" name="gender" required class="form-control" [(ngModel)]="currentUser.gender" id="townborn">
+                    </li>
+                    <li class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required [(ngModel)]="currentUser.email" class="form-control" id="email">
+                    </li>
+                    <li class="form-row">
+                        <label for="email">Password</label>
+                        <input type="password" name="password" required [(ngModel)]="currentUser.password" class="form-control" id="password">
+                    </li>
+                    <hr/>
+                    <li class="form-row">
+                        <button type="submit" id="submitBtn" [disabled]="!currentUser.email || !currentUser.name || !currentUser.password" class="btn btn-primary">Submit</button>
+                    </li>
+                    <li>
+                        <hr class="hr-text" data-content="OR">
+
+                        <button type="button" id="login" [routerLink]="['/login']" class="btn btn-outline-info">Login</button>
+                    </li>
+                </ul>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

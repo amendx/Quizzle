@@ -1,0 +1,66 @@
+#section-home{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wrapper {
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
+  }
+  .form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+  }
+  .form-row > label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+  }
+  .form-row > input, select {
+    flex: 2;
+  }
+  .form-row >textarea {
+    flex: 2;
+    resize: none
+  }
+  .form-row > input,
+  .form-row > button {
+    padding: .5em;
+  }
+
+  #edit-button{
+    margin-right: .7em;
+  }
+ 
+  td 
+{
+    height: 50px; 
+    width: 50px;
+   
+}
+.form-row> #info-button{
+  position: absolute;
+  left: 2em;
+}
+
+
+#quizAvailable td, th 
+{
+    text-align: center; 
+    vertical-align: middle;
+  
+}
+  #btn-available {
+
+    color: green
+  }
+  #btn-available:hover {
+
+    background: rgba(138, 134, 136, 0.5)
+  }
+
+  #btn-unavailable{
+    color: red;
+  }

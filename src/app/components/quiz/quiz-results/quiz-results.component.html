@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">
+        <h5 *ngIf="!goodGrade" class="card-title">Quiz Results:
+            <b style="color: red">{{currentQuiz.name}}</b>
+        </h5>
+        <h5 *ngIf="goodGrade" class="card-title">Quiz Results:
+            <b style="color: #50ba57">{{currentQuiz.name}}</b>
+        </h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <th scope="col">Question</th>
+                <th scope="col">Correct</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let question of currentQuestions">
+                    <td>{{question.name}}</td>
+
+                    <td align="right">
+                        <button class="btn btn-default" *ngIf="question.isCorrect" id="btn-available">Correct</button>
+                        <button class="btn btn-default" *ngIf="!question.isCorrect" id="btn-unavailable">Incorrect</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <hr/>
+        <button id="openModal" class="btn btn-success" data-toggle="modal" data-target="#scoreModal"> Open Score</button>
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="scoreModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Your score was:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="!goodGrade">
+                    <h1>
+                        <b style="color: red">{{scoreQuestions}}/{{totalQuestions}}</b>
+                    </h1>
+                </div>
+                <div *ngIf="goodGrade">
+                    <h1>
+                        <b style="color: #50ba57">{{scoreQuestions}}/{{totalQuestions}}</b>
+                    </h1>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
