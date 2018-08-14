@@ -25,6 +25,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Run The DB Server
 First Install JSON DB Server: 
 * [JSON Server](https://github.com/typicode/json-server)
+
 Run: `npm install -g json-server`
 
 Wait for it to finish
