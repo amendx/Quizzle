@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 In this project, I'm using two framworks: 
 * Angular 6
 * NodeJS 
+* JSON Server
 
 First you'll need to have `NodeJS` installed, if you already have it, skip this step.
 
@@ -22,6 +23,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 ## Run The DB Server
+First Install JSON DB Server: 
+* [JSON Server](https://github.com/typicode/json-server)
+Run: `npm install -g json-server`
+
+Wait for it to finish
+
 To run its database, you'll have to run it locally, please use this command line on a different terminal:
 `json-server --watch db.json`
 
