@@ -13,7 +13,11 @@ You can download it from here:
 * [NodeJS](https://nodejs.org/en/download/)
 
 ```
-After your download and install NodeJS, please, clone this repository and run `npm install` to install all of its dependencies.  
+After your download and install NodeJS, please, 
+
+clone this repository and run `npm install`
+
+to install all of its dependencies.  
 ```
 
 ## Development server
@@ -31,6 +35,7 @@ Run: `npm install -g json-server`
 Wait for it to finish
 
 To run its database, you'll have to run it locally, please use this command line on a different terminal:
+
 `json-server --watch db.json`
 
 
